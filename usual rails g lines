@@ -1,0 +1,9 @@
+rails g devise:install
+rails g devise:views
+
+rails g simple_form:install --bootstrap
+rails g datetimepicker_rails:install Font-Awesome
+
+rails g rspec:install
+
+figaro install

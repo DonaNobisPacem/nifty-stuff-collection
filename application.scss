@@ -1,0 +1,26 @@
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+$body-bg: #E8E2EC !default;
+$navbar-default-bg: #557351;
+$navbar-default-link-color: #EBECB0;
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap-datetimepicker";
+
+body {
+  padding-top: 50px;
+}
+
+.navbar-brand {
+  padding: 5px;
+}
+
+.center-image
+{
+    margin-left:auto;
+    margin-right:auto;
+}

@@ -1,0 +1,7 @@
+<%= simple_form_for @user do |f| %>
+	<%= f.input :email, required: true, autofocus: true %>
+	<%= f.input :admin, inline_label: 'Is admin?' %>
+	<%= f.input :approved, inline_label: 'Is approved?' %>
+
+	<%= f.button :submit, "Submit", :class => "btn btn-success" %>
+<% end %>
