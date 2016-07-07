@@ -1,0 +1,50 @@
+<% if user_signed_in? %>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+		    <div class="navbar-header">
+				<%= link_to image_tag('upseal.png', :class => "navbar-brand"), root_path %>
+		    </div>
+
+		    <div class="collapse navbar-collapse">
+		      	
+				<%= render "shared/search" %>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<%= link_to new_bid_path do %>
+						  	<i class="fa fa-plus"></i> Add Entry
+						<% end %>
+					</li>
+				</ul>
+	      		<ul class="nav navbar-nav navbar-right">
+	      			<li>
+			      		<%= link_to root_path do %>
+						  	<i class="fa fa-home"></i> Home
+						<% end %>
+					</li>
+					<% if current_user.admin %>						
+						<li class="dropdown">
+				     		<%= link_to '<i class="fa fa-user-plus"></i> Admin Panel <i class="fa fa-caret-down"></i>'.html_safe, admin_panel_path, :id => 'admindrop', :'data-toggle' => 'dropdown', :class => 'dropdown-toggle' %>
+				     		<ul class="dropdown-menu">
+								<li> <%=link_to '<i class="fa fa-user-plus"></i> User Management'.html_safe, admin_panel_path %> </li>
+								<li> <%=link_to '<i class="fa fa-shopping-basket"></i> List of Modes of Procurement'.html_safe, modes_path %> </li>
+							</ul>
+						</li>
+					<% end %>
+					<li>
+			      		<%= link_to edit_user_registration_path do %>
+						  	<i class="fa fa-gear"></i> Settings
+						<% end %>
+					</li>
+			      	<li class="">
+						<%= link_to(destroy_user_session_path, :method=>'delete') do %>
+						<i class="fa fa-sign-out"></i> Logout
+						<% end %>
+					</li>
+		      	</ul>
+
+		    </div>
+	  	</div>
+	</nav>
+<% else %>
+<% end %>
